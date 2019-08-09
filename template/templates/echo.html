@@ -1,0 +1,6 @@
+{% csrf_token %}
+
+{% if has_body %}
+    {{ method }} {{ q_str }}
+{% endif %}
+statement is {{ now }}
