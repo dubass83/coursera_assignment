@@ -12,7 +12,7 @@ class User(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=255)
-    author = models.ForeignKey(User)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateTimeField(default=timezone.now)
 
     subscribers = models.ManyToManyField(User, related_name='subscriptions')
@@ -20,8 +20,8 @@ class Blog(models.Model):
 
 class Topic(models.Model):
     title = models.CharField(max_length=255)
-    blog = models.ForeignKey(Blog)
-    author = models.ForeignKey(User)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateTimeField(default=timezone.now)
 
     likes = models.ManyToManyField(User, related_name='likes')
