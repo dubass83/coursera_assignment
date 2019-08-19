@@ -108,3 +108,6 @@ db.sqlite3
 # idea
 
 .idea/
+
+# Mac OS
+.DS_Store
