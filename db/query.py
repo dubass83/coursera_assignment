@@ -40,12 +40,21 @@ def create():
 
     topic1.save()
 
+
 def edit_all():
-    pass
+    users = User.objects.all()
+
+    for user in users:
+        user.first_name = "uu1"
+        user.save()
 
 
 def edit_u1_u2():
-    pass
+    users = User.objects.filter(Q(first_name='u1') | Q(first_name='u2'))
+
+    for user in users:
+        user.first_name = "uu1"
+        user.save()
 
 
 def delete_u1():
@@ -97,4 +106,5 @@ def get_topic_that_dont_have_like():
 
 
 if __name__ == "__main__":
-    create()
+    # create()
+    pass
